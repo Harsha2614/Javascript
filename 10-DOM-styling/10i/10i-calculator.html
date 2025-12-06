@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10j calculator</title>
+    <link rel="stylesheet" href="10i.css">
+</head>
+<body>
+    <h1 style="color: azure;">Calculator project</h1>
+    <br>
+  <p class="display css-display"> </p>
+    <p>
+    <button onclick="Calculation(9)" class="number">9</button>
+    <button onclick="Calculation(8)" class="number">8</button>
+    <button onclick="Calculation(7)" class="number">7</button>
+    <button onclick="Calculation('-')" class="sign">-</button>
+     </p>
+     <p>
+    <button onclick="Calculation(6)" class="number">6</button>
+    <button onclick="Calculation(5)" class="number">5</button>
+    <button onclick="Calculation(4)" class="number">4</button>
+    <button onclick="Calculation('+')" class="sign">+</button>
+    
+    </p>
+    <p>
+    <button onclick="Calculation(3)" class="number">3</button>
+    <button onclick="Calculation(2)" class="number">2</button>
+    <button onclick="Calculation(1)" class="number">1</button>
+    <button onclick="Calculation('*')" class="sign">x</button>
+    </p>
+    <p>
+
+    
+    <button onclick="Calculation(0)" class="number">0</button>
+    <button onclick="Calculation('.')" class="number">.</button>
+
+    <button onclick="equals();
+    
+    " class="number">=</button>
+    <button onclick="Calculation('/')" class="sign">/</button>
+</p>
+    <button onclick="
+    calculationValue='';
+            display();
+            localStorage.setItem('calculation',calculationValue);
+   
+    " class="number">clear</button>
+
+    <script src="10i.js">
+        
+    </script>
+    
+</body>
+</html>
