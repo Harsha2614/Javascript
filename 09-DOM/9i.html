@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9i CartQuantity</title>
+</head>
+<body>
+    <button onclick="Valueofcart(0)"> Show Quantity</button>
+    <button >Add to cart</button>
+    <button onclick="Valueofcart(2)" >+2</button>
+    <button onclick="Valueofcart(3)">+3</button>
+    <button onclick="Valueofcart(4)">+4</button>
+    <button onclick="Valueofcart(5)">+5</button>
+    <button >Remove from cart</button>
+    <button onclick="Valueofcart(-2)">-2</button>
+    <button onclick="Valueofcart(-2)" >-3</button>
+    <p class="text-to-display"></p>
+
+    <script>
+        let cartQuantity=0;
+        function Valueofcart(number){
+            cartQuantity+=number;
+            console.log(cartQuantity);
+        document.querySelector('.text-to-display').innerHTML=`Cart Quantity : ${cartQuantity}`;
+        }
+    </script>
+</body>
+
+</html>

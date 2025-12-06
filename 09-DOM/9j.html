@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9j calculator</title>
+</head>
+<body>
+  <p class="display"> </p>
+    <p>
+    <button onclick="Calculation(9)" class="number">9</button>
+    <button onclick="Calculation(8)">8</button>
+    <button onclick="Calculation(7)">7</button>
+    <button onclick="Calculation('-')">-</button>
+     </p>
+     <p>
+    <button onclick="Calculation(6)">6</button>
+    <button onclick="Calculation(5)">5</button>
+    <button onclick="Calculation(4)">4</button>
+    <button onclick="Calculation('+')">+</button>
+    
+    </p>
+    <p>
+    <button onclick="Calculation(3)">3</button>
+    <button onclick="Calculation(2)">2</button>
+    <button onclick="Calculation(1)">1</button>
+    <button onclick="Calculation('*')">x</button>
+    </p>
+    <button onclick="Calculation(0)" style="width:50px; " >0</button>
+    <button onclick="equals();
+    ">=</button>
+    <button onclick="Calculation('/')">/</button>
+
+    <button onclick="
+    calculationValue='';
+            display();
+            localStorage.setItem('calculation',calculationValue);
+   
+    " >clear</button>
+
+    <script>
+        
+         let calculationValue=localStorage.getItem('calculation')||"";
+         display();
+         function Calculation(number){
+            calculationValue+=number;
+            console.log(calculationValue);
+            display();
+            
+         }
+         function equals(){
+            calculationValue=eval(calculationValue);
+            console.log(calculationValue);
+            display();
+
+            localStorage.setItem('calculation',calculationValue);
+            
+         }
+
+         function display(){
+            document.querySelector('.display').innerHTML=calculationValue;
+        }
+
+    </script>
+    
+</body>
+</html>

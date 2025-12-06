@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        .zero{
+            width: 77px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    
+    <p>
+<button onclick="
+       buttonNumber(7);
+        "
+    
+    >7</button>
+    <button onclick="
+        buttonNumber(8);
+        "
+    
+    >8</button>
+    <button onclick="
+       buttonNumber(9);
+        "
+    
+    >9</button>
+    <button onclick="
+        calculation+=' * ';
+        console.log(calculation);
+        "
+    
+    >x</button>
+   
+
+    </p>
+
+    <p>
+<button onclick="
+       buttonNumber(4);
+        "
+    
+    >4</button>
+    <button onclick="
+        buttonNumber(5);
+        "
+    
+    >5</button>
+    <button onclick="
+        buttonNumber(6);
+        "
+    
+    >6</button>
+
+    <button onclick="
+        calculation+=' - ';
+        console.log(calculation);
+        "
+    
+    >-</button>
+</p>
+
+<p>
+<button onclick="
+        buttonNumber(1);
+        "
+    
+    >1</button>
+    <button onclick="
+       buttonNumber(2);
+        "
+    
+    >2</button>
+    <button onclick="
+        buttonNumber(3);
+        "
+    
+    >3</button>
+    <button onclick="
+        calculation+=' + ';
+        console.log(calculation);
+        "
+    
+    >+</button>
+    </p>
+
+     <button onclick="
+        buttonNumber(0);
+        "
+    class="zero"
+    >0</button>
+
+     <button onclick="
+     equals();
+     
+    ">=</button>
+
+
+    <script>
+           let calculation='';
+        function equals(){
+            eval(calculation);
+     calculation=eval(calculation);
+     console.log(calculation);
+     calculation='';
+
+        }
+        
+        function buttonNumber(number){
+            if(number===0){
+
+        calculation+='0';
+        console.log(calculation);
+            }
+
+           else if(number===1){
+        calculation+='1';
+        console.log(calculation);
+
+            
+            }
+
+            else if(number===2){
+        calculation+='2';
+        console.log(calculation);
+
+            
+            }
+            else if(number===3){
+        calculation+='3';
+        console.log(calculation);
+
+            
+            }
+            else if(number===4){
+        calculation+='4';
+        console.log(calculation);
+
+            
+            }
+            else if(number===5){
+        calculation+='5';
+        console.log(calculation);
+
+            
+            }
+            else if(number===6){
+        calculation+='6';
+        console.log(calculation);
+
+            
+            }
+            else if(number===7){
+        calculation+='7';
+        console.log(calculation);
+
+            
+            }
+            else if(number===8){
+        calculation+='8';
+        console.log(calculation);
+
+            
+            }
+            else if(number===9){
+        calculation+='9';
+        console.log(calculation);
+
+            
+            }
+
+
+        }
+    </script>
+</body>
+</html>

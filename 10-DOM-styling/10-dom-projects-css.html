@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        .sub-btn{
+            border: none;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-weight: bold;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .btn-subscribed{
+            background-color: rgb(240, 240, 240);
+            color: black;
+            font-weight: bold;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .input-btn{
+            padding: 10px;
+        }
+        .calculate-btn{
+            padding: 12px 15px;
+            color: white;
+            background-color: green;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+      .div-input{
+        display: flex;
+        gap: 10px;
+      }
+
+    </style>
+</head>
+<body>
+    <p> YouTube Subscribe button</p>
+    <p><button onclick="change()" class="sub-button sub-btn">Subscribe</button></p>
+
+    <br>
+    <p>
+        <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders above $40 = free shipping</p>
+    <div class="div-input">
+        <input class="inputt input-btn" placeholder="Cost of Order" onkeydown=" onkeydownfun(event)">
+    <button onclick="price()" class="calculate-btn">Calculate</button>
+
+    </div>
+    
+    <p class="final-price"></p>
+    </p>
+    <br>
+    
+    <p><p>Rock paper scissors</p>
+    <a href="10-css-rock-papers-scissors.html" >Click here to open</a>
+    </p>
+
+    <script>
+        function change(){
+            const buttonelement=document.querySelector('.sub-button');
+            if(buttonelement.innerHTML==='Subscribe'){
+                buttonelement.innerHTML='Subscribed';
+                buttonelement.classList.add('btn-subscribed');
+            }
+            else if(buttonelement.innerHTML==='Subscribed'){
+                buttonelement.innerHTML='Subscribe';
+                buttonelement.classList.remove('btn-subscribed');
+            }
+        }
+
+         function onkeydownfun(event){
+            console.log(event.key)
+            
+            if(event.key==='Enter'){
+                price();
+            }
+        }
+        
+        function price(){
+            const priceElement=document.querySelector('.inputt');
+        let value=Number(priceElement.value);
+        console.log(value);
+            if(value<=40){
+                value=value+10;
+            }
+            
+        document.querySelector('.final-price').innerHTML=`$${value}`;
+        }
+    </script>
+</body>
+</html>

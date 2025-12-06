@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9C</title>
+</head>
+<body>
+    <button class="btn-heads" onclick="playGame('Heads')">heads</button>
+    <button  class="btn-tails" onclick="playGame('Tails')">tails</button>
+    <p class="js-text"></p>
+
+    <script>
+        let computerValue=compValue();
+        let answer="";
+        function playGame(userMove){
+            
+            if(userMove===computerValue){
+                answer+='You won';
+
+            }
+            else{
+                answer+='You lost';
+            }
+
+            document.querySelector('.js-text').innerHTML=`You chose: ${userMove}`;
+        }
+        function compValue(){
+            const val=Math.random();
+        let result='';
+        if(val>=0 && val<1/2){
+            result+='Heads';
+        }
+        else if(val>=1/2 && val<1){
+            result+='Tails';
+        }
+return result;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <p> YouTube subscribe button</p>
+    <p><button onclick="change()" class="sub-button">subscribe</button></p>
+    
+    <p><p>Rock paper scissors</p>
+    <a href="09-dom-rock-papers-scissors.html" >Click here to open</a>
+    </p>
+    <p>
+        <p>Amazon Shipping price </p>
+        <a href="09-dom-amazon-shipping.html">Click to open Shipping program</a>
+
+    </p>
+    <script>
+        function change(){
+            const buttonelement=document.querySelector('.sub-button');
+            if(buttonelement.innerHTML==='subscribe'){
+                buttonelement.innerHTML='subscribed';
+            }
+            else if(buttonelement.innerHTML==='subscribed'){
+                buttonelement.innerHTML='subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

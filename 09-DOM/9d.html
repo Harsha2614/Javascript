@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9d</title>
+</head>
+<body>
+    <input placeholder="Enter Your name" class="js-input" onkeydown="Enter(event)">
+    <button class="submit-btn" onclick="Name()">Submit</button>
+    <p class="display-text"></p>
+
+    <script>
+        //9e
+        function Enter(input){
+            
+            if(input.key==='Enter'){
+                Name();
+            }
+        }
+
+        //9d
+        function Name(){
+            const valueInside=document.querySelector('.js-input');
+            let text=valueInside.value;
+
+            document.querySelector('.display-text').innerHTML=`Your name is : ${text}`;
+            
+        }
+    </script>
+</body>
+</html>
