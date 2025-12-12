@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        // const myarray=[10,20,30];
+        // console.log(myarray);
+
+        // myarray[3]=1000;
+         
+        
+        // console.log(myarray)
+
+        /*
+        const arr=['hello',12,123,53]
+        console.log(typeof arr)
+        console.log(Array.isArray(arr)); // to check array or not
+         
+        console.log(arr.length);
+        arr.push(10);//adds at end
+        console.log(arr);
+       arr.splice(0,3); //from starting to given index will be removed
+        arr.pop();//removes last
+        arr.unshift(1,2)//adds at front
+        arr.shift();
+        arr.shift();// removes from front
+        console.log(arr);
+        const arrayq=[1,2,3,4];
+        const arrayw=arrayq.slice(); //copies the arrayq in arrayw
+        arrayw.push(2);
+        console.log(arrayq);
+        console.log(arrayw);
+
+        const arr=[1,2,3,4,5];
+        console.log(arr);
+       //destructing to store the multiple varisbles at once
+        const[first,second]=[1,2,3,4,5];
+        console.log(first);
+        console.log(second);
+        */
+       /*
+ //break and continue
+        for(let i=0;i<10;i++){
+            if(i%3==0) continue;//skip  iterations when i is not divisible by 3
+            
+            if(i==7) break; // loop stops if i=7
+
+            console.log(i);
+
+        }
+        console.log('-----------------------')
+        let x=0;
+
+        while(x<10){
+            if(x%3===0){
+                x=x+1;
+               continue;
+            }
+            console.log(x);
+            x++;
+            
+            
+        }
+            */
+
+    //How to use loops with functions
+
+   function double(nums){
+    const numsDoubled=[];
+
+    for(let i=0;i<nums.length;i++){
+       if (nums[i]===0){
+        continue;
+       }
+        numsDoubled.push( nums[i]*2);
+
+    }
+
+    return numsDoubled;
+        }
+
+        console.log(double([1,23,4,5,0]));
+
+
+
+        
+        
+        
+
+
+    </script>
+</body>
+</html>
