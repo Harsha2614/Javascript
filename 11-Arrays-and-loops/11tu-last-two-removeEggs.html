@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=[];
+        let count=0
+        function removeEggs(foodss){
+            let f=foodss.slice(); //to copy the array and not change original array
+            let foods=f.reverse();
+            for(let i=0;i<foods.length;i++){
+                let food=foods[i];
+                if(food==='egg' && count<2){
+                    count++;
+                    continue;
+                }
+                
+                arr.push(food);
+            }
+            console.log(foodss)
+            
+            return arr.reverse();
+        }
+        
+        console.log(removeEggs(['egg','apple','egg','egg','ham']));
+    </script>
+    
+</body>
+</html>

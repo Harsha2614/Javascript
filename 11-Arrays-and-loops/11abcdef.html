@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //11a
+        const array1=[10,20,30];
+        console.log(array1);
+        array1[2]=99;
+        console.log(array1);
+        //11b
+        function getLastValue(array2){
+            
+                let a=array2[array2.length-1];
+                return a;
+                
+
+            
+
+        }
+        console.log(getLastValue([1,20,22,24,5,80]));
+        //11c
+        function arraySwap(array3){
+            let first=array3[0];
+            let last=array3[array3.length-1];
+            let temp=first;
+            first=last;
+            last=temp;
+            array3[0]=first;
+            array3[array3.length-1]=last;
+
+            for(let i=0;i<array3.length;i++){
+                console.log(array3[i]);
+            }
+
+
+        }
+        arraySwap([1,20,22,24,5]);
+        //11d
+        for(let i=0;i<11;i++){
+            if(i%2!=0) continue;
+            console.log(i);
+        }
+        //11e
+        for(let i=5;i>=0;i--){
+            console.log(i);
+        }
+        //11f
+        let s=0;
+        while(s<=10){
+            if(s%2!=0) {
+                s++;
+                continue;
+            }
+            console.log(s);
+            s++;
+
+        }
+
+        let t=5;
+        while(t>=0){
+            console.log(t);
+            t--;
+
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
