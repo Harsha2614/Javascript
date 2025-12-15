@@ -13,7 +13,7 @@
 
             localStorage.setItem('calculation',calculationValue);
             
-         }
+         } 
 
          function display(){
             document.querySelector('.display').innerHTML=calculationValue;
