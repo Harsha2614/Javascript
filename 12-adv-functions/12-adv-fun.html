@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Adv functions</title>
+</head>
+<body>
+    <script>
+        /*
+
+        function  greeting(){
+            console.log('hello');
+        }
+        greeting();
+
+     const function1= function greeting() {
+        console.log('hello2');
+        
+     }
+     console.log(function1);
+     console.log(typeof function1);
+
+     function1();
+
+        const function2= function() {
+        console.log('hello3');
+        
+     }
+     function2();  //anonyomous function
+
+     const obj={
+        fun: function(){
+            console.log('hello4');
+
+        }
+     }
+     obj.fun();
+
+     //funtion inside a function
+
+
+     function name(params) {
+        params();
+
+        
+   
+     }
+     name(function(){
+        console.log('hello5');
+     })
+
+
+ setTimeout(function(){
+    console.log('Time out');
+ },3000);
+
+ console.log('next Line');
+
+ setInterval(function(){
+    console.log('interval');
+ },3000);
+
+  console.log('next Line 2');
+  */
+
+  //for each loop function
+
+//   [
+//     'make dinner',
+//     'wash dishes',
+//     'watch youtube'
+//   ].forEach(function(value,index){
+//     console.log(index);
+//     console.log(value);
+//   });
+
+    [
+    'make dinner',
+    'wash dishes',
+    'watch youtube'
+  ].forEach(function(value,index){
+    if(value==='wash dishes') return; //return acts as continue
+    console.log(index);
+    console.log(value);
+  });
+
+    </script>
+</body>
+</html>
