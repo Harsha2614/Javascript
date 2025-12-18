@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <button class="add-btn" onclick="addRemove('add');">Add</button>
+    <button class="remove-btn" onclick="addRemove('remove');">Remove</button>
+    <script>
+       let intervalid;
+        const addBtn=document.querySelector('.add-btn');
+        const removeBtn=document.querySelector('.remove-btn');
+        let msg=2;
+        function addRemove(value){
+            if(value==='add'){
+                msg++;
+            }
+            else if(value==='remove'){
+                msg--;
+            }
+        }
+       clearInterval(intervalid);
+       intervalid= setInterval(function(){
+            if(document.title==='App'){
+                if(msg>0){
+                    document.title=`(${msg})  Messages`;
+
+                }
+                else{
+                    document.title='App';
+                }
+                
+
+            }
+            else{
+                document.title='App';
+            }
+            
+        },2000);
+
+        /*
+        Another version
+         let messages = 2;
+
+      // Save the intervalId in case we need to cancel it.
+      let intervalId;
+
+      // We'll use this variable to keep track of whether
+      // or not we're displaying the notification.
+      let isDisplayingNotification;
+
+      // Start displaying the notification in the tab
+      // when the page first loads.
+      displayNotification();
+
+      function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(function() {
+          if (document.title === 'App') {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = 'App';
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
+        
+
+        */
+    </script>
+  </body>
+</html>

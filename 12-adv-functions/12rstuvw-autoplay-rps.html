@@ -70,8 +70,8 @@
     <p class="js-score css-in"> </p>
     
 
-    <button  onclick="resetScore();" class="reset-btn">Reset score</button>
-    <button onclick="autoplay();" class="autoplay-btn">Auto play</button>
+    <button class="reset-btn">Reset score</button>
+    <button class="autoplay-btn">Auto play</button>
 
     <script>
 
@@ -83,7 +83,7 @@
        
        onscreen();
 
-        function resetScore(){
+        const resetScore=()=>{
             score.wins=0;
             score.losses=0;
             score.ties=0;
@@ -95,11 +95,24 @@
             
 
         }
+        const resetbtn=document.querySelector('.reset-btn');
+        resetbtn.addEventListener('click',resetScore);
+       
 
-      
+const changetext=()=>{
+    const autobtn=document.querySelector('.autoplay-btn');
+    if(autobtn.innerHTML==='Auto play'){
+        autobtn.innerHTML='Stop Playing';
+    }
+    else if(autobtn.innerHTML==='Stop Playing'){
+        autobtn.innerHTML='Auto play';
+    }
+
+}
+
  let isautoPlaying=false;
        let  intervalid;
-        function autoplay(){
+        const autoplay=()=>{
             if(!isautoPlaying){
                 intervalid= setInterval(function (){
                      userMove=pickComputermove();
@@ -107,6 +120,7 @@
                 },
                 1000);
                 isautoPlaying=true;
+                
 
             }
             else{
@@ -116,6 +130,11 @@
             }
            
         }
+        //12rs
+
+        const autobtn=document.querySelector('.autoplay-btn');
+        autobtn.addEventListener('click',changetext);
+        autobtn.addEventListener('click',autoplay);
 
     const rock=document.querySelector('.js-rock');
     rock.addEventListener('click',()=>{
@@ -144,6 +163,11 @@
 
         else if (event.key==='a'){
             autoplay();
+             changetext();
+        }
+        else if(event.key==='Backspace'){
+            resetScore();
+           
         }
     });
 

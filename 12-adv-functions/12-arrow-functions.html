@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Arrow function</title>
+</head>
+<body>
+    <button class="js-btn">Click
+
+    </button>
+    
+    <script>
+
+        const btnElement=document.querySelector('.js-btn');
+
+        const eventlistener=()=>{
+            console.log('clicked')
+        }
+
+        btnElement.addEventListener('click',eventlistener) //can be used instead of onclick
+        
+
+        btnElement.removeEventListener('click',eventlistener);
+            //can add multiple event listeners to the button and can remove the event listener  
+         btnElement.addEventListener('click',()=>{
+            console.log('clicked2');
+        })
+
+
+
+        const regularfunction=function(param1,param2){
+            console.log('regular function')
+            return param1+param2;
+        }
+        console.log(regularfunction(2,3));
+
+        const arrowfunction =(param1,param2)=>{
+            console.log('arrow function');
+            return param1+param2;
+
+        }
+        console.log(arrowfunction(2,3));
+
+
+        const oneParam= param => console.log(param+1); //if one param is there
+        
+        oneParam(3);                   
+
+        const fun = () => 2+3;
+        console.log(fun());            //can use directly without return statement
+
+
+
+
+//foreach function
+
+['make dinner', 'wash dishes', 'watch youtube'].forEach((value, index) => {
+  if (value === 'wash dishes') return; // acts like continue for this callback
+  console.log(index);
+  console.log(value);
+});
+
+
+  //filter function returns a value
+
+console.log(  [1,2,3,-2].filter((value,index)=>{
+//    if(value>=0){
+//       return true;
+//    }
+//    else{
+//       return false;
+//    }
+
+return value>=0;
+
+  }));
+
+  //map function transform an array into another array based on return value
+
+  console.log([1,2,3].map((value,index)=>{
+    return value+100;
+
+
+  }));
+
+    console.log([1,2,3].map((value => value+100)));  
+    //shortcut for arrow function since we are not using the index and using only a single value
+
+/*
+
+Closure
+
+If a function has access to a value
+It will always have access to that value
+*/
+
+
+    </script>
+</body>
+</html>

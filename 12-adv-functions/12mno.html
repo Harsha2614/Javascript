@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>12m</title>
+</head>
+<body>
+ <script>
+    //11m
+    const addNum=(array,num)=>{
+
+        console.log(array.map((val)=>val+num));
+        
+        
+    };
+
+    addNum([-2,-1,0,99],2);
+
+    //11n
+    const removeEgg=(foods)=>{
+       return foods.filter(val=>{
+            if(val==='egg'){
+                return false
+            }
+            else{
+                return true;
+            }
+        });
+    }
+
+    console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+    //12o
+
+    const removeEggs=(foods)=>{
+        let count=0;
+       return foods.filter(val=>{
+            if(val==='egg' && count<2){
+                count++;
+                return false;
+                
+            }
+            else{
+                return true;
+            }
+        });
+    }
+
+    console.log(removeEggs(['egg','apple','egg','egg','ham']));
+
+
+
+ </script>
+    
+</body>
+</html>

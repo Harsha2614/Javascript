@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>12pq</title>
+</head>
+<body>
+    <p><button class="js-start-btn">Start</button></p>
+    <button class="add-btn" onclick="addRemove('add');">Add</button>
+    <button class="remove-btn" onclick="addRemove('remove');">Remove</button>
+</body>
+<script>
+   const updatefun=()=>{
+        const btn=document.querySelector('.js-start-btn');
+        if(btn.innerHTML==='Start'){
+            btn.innerHTML='Loading...';
+             setTimeout(function(){
+            btn.innerHTML=`Finished!`
+        },1000);
+        }
+    }
+    const btn=document.querySelector('.js-start-btn');
+    btn.addEventListener('click',updatefun);
+
+
+
+     let intervalid;
+        const addBtn=document.querySelector('.add-btn');
+        const removeBtn=document.querySelector('.remove-btn');
+        let msg=2;
+        const addRemove=(value)=>{
+            if(value==='add'){
+                msg++;
+            }
+            else if(value==='remove'){
+                msg--;
+            }
+        }
+
+       clearInterval(intervalid);
+       intervalid= setInterval(()=>{
+            if(document.title==='12pq'){
+                if(msg>0){
+                    document.title=`(${msg})  Messages`;
+
+                }
+                else{
+                    document.title='12pq';
+                }
+                
+
+            }
+            else{
+                document.title='12pq';
+            }
+            
+        },2000);
+
+        addBtn.addEventListener('click',addRemove('add'));
+        removeBtn.addEventListener('click',addRemove('remove'));
+    
+
+</script>
+</html>
