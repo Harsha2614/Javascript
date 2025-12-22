@@ -656,5 +656,36 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "2-Zipper Backpack",
+    rating: {
+      stars: 4,
+      count: 104
+    },
+    priceCents: 5500,
+    keywords: [
+      "kitchen",
+      "kitchen towels",
+      "tissues"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/Umbrella.jpg",
+    name: "Full extra large umbrella",
+    rating: {
+      stars: 3.5,
+      count: 315
+    },
+    priceCents: 2000,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
   }
 ];
