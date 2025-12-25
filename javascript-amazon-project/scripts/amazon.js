@@ -1,3 +1,4 @@
+import {cart} from '../data/cart.js';
 let htmlonpage='';
 
 products.forEach((product)=>{
@@ -104,6 +105,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
    textOnpage.classList.add('added-to-cart-visible');
 
    let intervalId;
+   
    clearTimeout(intervalId);
 
   intervalId= setTimeout(()=>{
