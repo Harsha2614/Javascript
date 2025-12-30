@@ -40,8 +40,6 @@ export function addtoCart(productId,selectorValue){
           }
            savetoStorage();
       };
-     
-
 export function removefromCart(productId){
  let updatedCart=[];
   cart.forEach((item)=>{
