@@ -90,3 +90,9 @@ document.querySelector('.js-productlist').innerHTML=htmlonpage;
           updatecart(productId);
           });
     });
+
+    // Show cart quantity when page loads
+const cartQuantity = calculateCartQuantity();
+
+document.querySelector('.js-cart-quantity')
+  .innerHTML = cartQuantity;

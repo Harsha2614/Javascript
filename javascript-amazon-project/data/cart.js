@@ -60,3 +60,18 @@ export function calculateCartQuantity() {
 
   return cartQuantity;
 }
+export function updateQuantity(productId, newQuantity) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.id) {   // ✅ FIXED
+      matchingItem = cartItem;
+    }
+  });
+
+  if (!matchingItem) return; // safety check
+
+  matchingItem.quantity = newQuantity;
+
+  savetoStorage();
+}
