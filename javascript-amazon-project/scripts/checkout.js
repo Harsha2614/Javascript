@@ -7,6 +7,18 @@ import {
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // External libraries should be imported as modules to avoid the naming conflict
+
+
+// hello();
+
+// const today=dayjs();
+// const deliverydate=today.add(7,'days');
+// console.log(today.format('dddd,MMMM D'))
+// console.log(deliverydate.format('dddd,MMMM D'))
+
 
 let cartSummaryHTML='';
 
@@ -107,7 +119,7 @@ cart.forEach((cartItem)=>{
 
 });
 
-console.log(cartSummaryHTML);
+
 
 document.querySelector('.js-order-summary').innerHTML=cartSummaryHTML;
 
