@@ -106,7 +106,7 @@ function deliveryOptionsHTML(matchingproduct,cartItem){
     const deliveryDate =today.add(deliveryOption.deliveryDays,'days');
     const dateString=deliveryDate.format('dddd,MMMM D');
     const priceString=deliveryOption.priceCents === 0 ? 'FREE' : `$ ${formatCurrency(deliveryOption.priceCents)} -`;
-    let isChecked=deliveryOption.id===cartItem.deliveryOptionId;
+    let isChecked = deliveryOption.id===cartItem.deliveryOptionId;
     html+= `             
       <div class="delivery-option">
       <input type="radio"

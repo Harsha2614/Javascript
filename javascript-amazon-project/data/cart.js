@@ -78,3 +78,6 @@ export function updateQuantity(productId, newQuantity) {
 
   savetoStorage();
 }
+function updateDeliveryOption(productId,deliveryOptionId){
+  
+}
