@@ -5,14 +5,15 @@ import {
   updateQuantity,
   updateDeliveryOption
 } from '../../data/cart.js'
-import {products} from '../../data/products.js';
+import {products,getProduct} from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // External libraries should be imported as modules to avoid the naming conflict
 
-import deliveryOptions from '../../data/deliveryOptions.js';
+import {deliveryOptions,getDeliveryOptionId} from '../../data/deliveryOptions.js';
+import { renderPaymentSummary } from './paymentSummary.js';
 
 
 // hello();
@@ -30,24 +31,12 @@ export function renderOrderSummary(){
 
   cart.forEach((cartItem)=>{
       const productId=cartItem.id;
-      let matchingproduct;
-      products.forEach((product)=>{
-        if(product.id==productId){
-          matchingproduct=product;
-        }
-
-      });
+        const matchingproduct=getProduct(productId);
+       
 
       const deliveryOptionId=cartItem.deliveryOptionId;
-      let deliveryOption;
-      deliveryOptions.forEach((option)=>{
-        if(option.id==deliveryOptionId){
-          deliveryOption=option;
-
-        }
-        
-        
-      });
+      const deliveryOption=getDeliveryOptionId(deliveryOptionId);
+    
       
       const today=dayjs();
       const deliverydate=today.add(deliveryOption.deliveryDays,'days');
@@ -144,6 +133,7 @@ export function renderOrderSummary(){
 
         const container= document.querySelector(`.js-cart-item-container-${productId}`);
         container.remove();
+        renderPaymentSummary();
         
         updateCartQuantity();
 
@@ -153,15 +143,16 @@ export function renderOrderSummary(){
 
 
 
-  function updateCartQuantity(){
+function updateCartQuantity(){
     const cartQuantity = calculateCartQuantity();
   document.querySelector('.js-return-to-home-link')
     .innerHTML = `${cartQuantity} items`;
 
   }
+  
   updateCartQuantity();
 
-  
+ 
   document.querySelectorAll('.js-update-link')
     .forEach((link) => {
       link.addEventListener('click', () => {
@@ -200,6 +191,7 @@ export function renderOrderSummary(){
         quantityLabel.innerHTML = newQuantity;
 
         updateCartQuantity();
+        renderPaymentSummary();
 
       });
     });
@@ -209,8 +201,11 @@ export function renderOrderSummary(){
         const {productId,deliveryOptionId}=element.dataset;
         updateDeliveryOption(productId,deliveryOptionId)
         renderOrderSummary();
+        renderPaymentSummary();
+        
       });
       
     });
 }
 
+export const cartQuantityexport = calculateCartQuantity();

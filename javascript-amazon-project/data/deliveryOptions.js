@@ -1,3 +1,5 @@
+
+
 export const deliveryOptions=[
     {
         id : '1',
@@ -19,3 +21,13 @@ export const deliveryOptions=[
     }
 ];
 export default deliveryOptions
+
+export function getDeliveryOptionId(deliveryOptionId){
+    let deliveryOption;
+      deliveryOptions.forEach((option)=>{
+        if(option.id==deliveryOptionId){
+          deliveryOption=option;
+        }
+      });
+return deliveryOption || deliveryOptions[0];
+}
