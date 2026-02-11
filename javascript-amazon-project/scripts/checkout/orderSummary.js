@@ -10,9 +10,9 @@ import { formatCurrency } from '../utils/money.js';
 
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 
-import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // External libraries should be imported as modules to avoid the naming conflict
+ // External libraries should be imported as modules to avoid the naming conflict
 
-import {deliveryOptions,getDeliveryOptionId} from '../../data/deliveryOptions.js';
+import {deliveryOptions,getDeliveryOptionId,calculateDeliveryDate} from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
 
 
@@ -36,11 +36,8 @@ export function renderOrderSummary(){
 
       const deliveryOptionId=cartItem.deliveryOptionId;
       const deliveryOption=getDeliveryOptionId(deliveryOptionId);
-    
-      
-      const today=dayjs();
-      const deliverydate=today.add(deliveryOption.deliveryDays,'days');
-      const datestring=deliverydate.format('dddd, MMMM D');
+
+      const datestring=calculateDeliveryDate(deliveryOption);
 
       cartSummaryHTML+=
       `
@@ -95,9 +92,8 @@ export function renderOrderSummary(){
     let  html='';
     
     deliveryOptions.forEach((deliveryOption)=>{
-      const today=dayjs();
-      const deliveryDate =today.add(deliveryOption.deliveryDays,'days');
-      const dateString=deliveryDate.format('dddd,MMMM D');
+     
+      const dateString=calculateDeliveryDate(deliveryOption);
       const priceString=deliveryOption.priceCents === 0 ? 'FREE' : `$ ${formatCurrency(deliveryOption.priceCents)} -`;
       let isChecked = deliveryOption.id===cartItem.deliveryOptionId;
       html+= `             
@@ -160,6 +156,7 @@ function updateCartQuantity(){
           `.js-cart-item-container-${productId}`
         );
         container.classList.add('is-editing-quantity');
+
         
       });
     });
