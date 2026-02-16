@@ -53,6 +53,14 @@ describe('test suite : renderOrderSummary', () => {
 
     expect (document.querySelector(`.js-product-quantity-${productId2}`).innerText).toContain('Quantity: 1');
 
+    expect(document.querySelector(`.js-product-name-${productId1}`).innerText).toContain("Black and Gray Athletic Cotton Socks - 6 Pairs");
+
+    expect(document.querySelector(`.js-product-price-${productId1}`).innerText).toContain("$");
+
+
+ 
+    
+
     
 
   });
