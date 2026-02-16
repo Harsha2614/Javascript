@@ -1,4 +1,4 @@
-import { formatCurrency } from "../scripts/utils/money.js";
+import { formatCurrency } from "../../scripts/utils/money.js";
 
 //Automated testing
  console.log("Test Suite for FormatCurrency:")
@@ -25,3 +25,11 @@ if(formatCurrency(2095)==='20.95'){
 else{
     console.log("Failed")
 }
+console.log("test 2000.4")
+if(formatCurrency(2000.4)==='20.00'){
+    console.log("passed");
+}
+else{
+    console.log("Failed");
+}
+
