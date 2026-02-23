@@ -2,8 +2,13 @@ import {validDeliveryOption} from './deliveryOptions.js';
 
 class Cart{
 
-     cartItems=undefined;
-     localStorageKey=undefined;
+     cartItems;
+     localStorageKey;
+
+     constructor(localStorageKey){
+      this.localStorageKey=localStorageKey;
+      this.loadFromStorage();
+     }
 
   loadFromStorage (){
   this.cartItems=JSON.parse(localStorage.getItem(this.localStorageKey));
@@ -121,20 +126,13 @@ updateQuantity(productId, newQuantity) {
 
 }
 
-const cart= new Cart();
-const businessCart= new Cart();
-
-cart.localStorageKey='cart-oop';
-businessCart.localStorageKey='cart-business';
-
-
-cart.loadFromStorage();
-businessCart.loadFromStorage();
-
-
+const cart= new Cart('cart-oop');
+const businessCart= new Cart('cart-business');
 
 console.log(cart);
 console.log(businessCart);
+
+console.log(businessCart instanceof Cart);
 
 
 
