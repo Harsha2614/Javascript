@@ -767,3 +767,11 @@ export const products = [
 
 });
 
+/*
+function logThis(){
+  console.log(this)
+}
+logThis();
+
+logThis.call("hello");
+*/
