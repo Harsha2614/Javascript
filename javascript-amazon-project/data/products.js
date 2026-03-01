@@ -100,7 +100,7 @@ export function loadProducts(callback){
       return new Product(productDetails);
     });
 
-    console.log('loaded');
+    console.log('load products');
 
     if (callback) {
       callback();
