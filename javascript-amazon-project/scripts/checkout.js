@@ -7,7 +7,26 @@ import { loadCart } from "../data/cart.js";
 
 //import '../data/cart-class.js';
 
+async function loadPage(){    //async makes a function to return a promise
 
+    await loadProductsFetch();  //await lets us wait for a promise to finish before going to the nextline and lets us write asynchronus code like a normal code
+
+    await new Promise((resolve)=>{
+        loadCart(()=>{
+            resolve();
+        });
+    });
+
+    renderOrderSummary();
+    renderPaymentSummary();
+
+
+}
+
+loadPage();
+ //await lets us wait for a promise to finish before going to the nextline 
+
+/*
 Promise.all([
   loadProductsFetch(),
     new Promise((resolve)=>{
@@ -21,7 +40,7 @@ Promise.all([
     renderPaymentSummary();
 })
 
-
+*/
 
 /*
 new Promise((resolve)=>{                        //promise() used to run function immediately
