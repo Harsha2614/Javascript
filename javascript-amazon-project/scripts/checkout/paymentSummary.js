@@ -94,7 +94,7 @@ export function renderPaymentSummary(){
 
             addOrder(order);
             console.log(orders);
-           // window.location.href = 'orders.html';
+           window.location.href = 'orders.html';
           } catch (error) {
             console.log('Unexpected error placing order.', error);
           } finally {
