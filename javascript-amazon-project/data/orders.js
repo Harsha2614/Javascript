@@ -1,6 +1,15 @@
-export const orders=JSON.parse(localStorage.getItem('orders')) ||[];
+const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
+export const orders = storedOrders.filter((order) => {
+  return order && order.id && Array.isArray(order.products);
+});
+
+saveToStorage();
 
 export function addOrder(order){
+    if (!order || !order.id || !Array.isArray(order.products)) {
+      return;
+    }
+
     orders.unshift(order);
     saveToStorage();
 }
