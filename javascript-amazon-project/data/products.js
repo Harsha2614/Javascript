@@ -103,11 +103,13 @@ export function loadProductsFetch(){
     });
 
     console.log('load products');
-
-
-  });
+  })/*.catch((error)=>{
+    console.log("error occured"); //errors handling in promises
+  })
+     */
   return promise;
 }
+ 
 /*
 
 loadProductsFetch().then(()=>{
@@ -138,6 +140,9 @@ export function loadProducts(callback){
 
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
+  xhr.addEventListener('error',(error)=>{  //seperate callbacks for the errors
+    console.log("Error loading page try again later");
+  })
 }
 
 

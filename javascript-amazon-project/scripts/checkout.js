@@ -9,17 +9,24 @@ import { loadCart } from "../data/cart.js";
 
 async function loadPage(){    //async makes a function to return a promise
 
-    await loadProductsFetch();  //await lets us wait for a promise to finish before going to the nextline and lets us write asynchronus code like a normal code
+    try{
+        // throw 'error1'; //this manually throws the error a=.Hence the try block code skips
+        await loadProductsFetch();  //await lets us wait for a promise to finish before going to the nextline and lets us write asynchronus code like a normal code
 
-    await new Promise((resolve)=>{
+    await new Promise((resolve,reject)=>{   //reject is a function that creates error in the future
+        //throw 'error2' //does not load cart
         loadCart(()=>{
+           //reject('error3');
             resolve();
         });
     });
+    }
+    catch{
+        console.log("unexpected Eror occured");
+    }
 
     renderOrderSummary();
     renderPaymentSummary();
-
 
 }
 
