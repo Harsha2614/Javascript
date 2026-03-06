@@ -71,6 +71,7 @@ export function calculateCartQuantity() {
 
   return cartQuantity;
 }
+
 export function updateQuantity(productId, newQuantity) {
   let matchingItem;
 
@@ -124,4 +125,10 @@ export function loadCart(callback){
 
   xhr.open('GET', 'https://supersimplebackend.dev/cart');
   xhr.send();
+}
+
+// Extra feature: make the cart empty after creating an order.
+export function resetCart() {
+  cart = [];
+  savetoStorage();
 }
